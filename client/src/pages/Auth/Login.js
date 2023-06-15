@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Layout from '../../components/layout/Layout'
 import toast from 'react-hot-toast'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth';
 
 const Login = () => {
@@ -12,6 +12,7 @@ const Login = () => {
   const [auth, setAuth] = useAuth()
 
   const navigate = useNavigate()
+  const location = useLocation()
 
   //Form function
   const handleSubmit = async (e) => {
@@ -29,7 +30,7 @@ const Login = () => {
           token: res.data.token
         })
         localStorage.setItem("auth", JSON.stringify(res.data))
-        navigate("/")
+        navigate(location.state || "/")
       } else {
         toast.error(res.data.message)
       }
@@ -42,7 +43,7 @@ const Login = () => {
   console.log(process.env.REACT_APP_API)
 
   return (
-    <Layout title="Login - Ecommer App">
+    <Layout title="Login - Ecommerce App">
       <div className="form-container" style={{ minHeight: "90vh" }}>
         <form onSubmit={handleSubmit}>
           <h4 className="title">LOGIN FORM</h4>

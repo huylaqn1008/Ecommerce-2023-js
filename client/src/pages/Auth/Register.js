@@ -37,7 +37,7 @@ const Register = () => {
     console.log(process.env.REACT_APP_API)
 
     return (
-        <Layout title="Register - Ecommer App">
+        <Layout title="Register - Ecommerce App">
             <div className="form-container" style={{ minHeight: "90vh" }}>
                 <form onSubmit={handleSubmit}>
                     <h4 className="title">REGISTER FORM</h4>

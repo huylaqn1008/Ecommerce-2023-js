@@ -121,7 +121,7 @@ font-family: 'Poppins', sans-serif; */
 
 .form-container form {
     display: block;
-    width: 30%;
+    width: 25%;
     align-items: center;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -149,7 +149,9 @@ font-family: 'Poppins', sans-serif; */
     border-radius: 0;
     background-color: #000;
     color: white;
-    width: 250px;
+    width: 200px;
+    height: 40px;
+    font-size: 19px;
 }
 
 .form-container form button:hover {
